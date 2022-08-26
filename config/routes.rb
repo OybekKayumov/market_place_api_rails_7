@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  #Api definition
+  namespace :api, defaults: { format: :json} do
+    namespace :v1 do
+      resources :users, only: [:show]
+    end
+    
+  end
 end
+
+
+# :v1
+# By this point the API is now scoped via the URL. For example with the
+# current configuration an end point for retrieving a product would be
+# 23like: http://localhost:3000/v1/products/1 
