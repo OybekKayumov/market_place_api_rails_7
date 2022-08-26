@@ -8,11 +8,11 @@
 
 - The purpose of this app is not only to teach you how to build an API with Rails but rather to teach you how to build an evolutive and maintainable API with Rails. That is, improve your current knowledge with Rails. On this journey, you will learn to:
 
-    • Use Git for version control
-    • Building JSON responses
-    • Test your end-points with unit and functional tests
-    • Set up authentication with JSON Web Tokens (JWT)
-    • Use JSON:API specification
-    • Optimize and cache the API
+        • Use Git for version control
+        • Building JSON responses
+        • Test your end-points with unit and functional tests
+        • Set up authentication with JSON Web Tokens (JWT)
+        • Use JSON:API specification
+        • Optimize and cache the API
 
 # 2022
