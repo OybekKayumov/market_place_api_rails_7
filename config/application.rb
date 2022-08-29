@@ -11,6 +11,8 @@ module MarketPlaceApiRails6
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.autoload_paths << '#{Rails.root}/lib'
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -27,5 +29,7 @@ module MarketPlaceApiRails6
     # In order to load the file into our application, you must
     # specify the lib folder in the list of Ruby on Rails _autoload_s. To do this, add the following configuration to the application.rb file:
     config.eager_load_paths << Rails.root.join('lib')
+
+    
   end
 end
