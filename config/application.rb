@@ -23,5 +23,9 @@ module MarketPlaceApiRails6
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # In order to load the file into our application, you must
+    # specify the lib folder in the list of Ruby on Rails _autoload_s. To do this, add the following configuration to the application.rb file:
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end
