@@ -29,6 +29,7 @@ module MarketPlaceApiRails6
     # In order to load the file into our application, you must
     # specify the lib folder in the list of Ruby on Rails _autoload_s. To do this, add the following configuration to the application.rb file:
     config.eager_load_paths << Rails.root.join('lib')
+    config.autoload_paths << "#{Rails.root}/lib" 
 
     
   end
