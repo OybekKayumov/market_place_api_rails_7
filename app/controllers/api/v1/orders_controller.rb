@@ -6,12 +6,21 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def show
-    order = current_user.orders.find(params[:id]) 
-    if order
-      options = { include: [:products] }
-      render json: OrderSerializer.new(order, options).serializable_hash
+    # order = current_user.orders.find(params[:id]) 
+    order = current_user.orders.find(order_params) 
+    if order.save
+      # options = { include: [:products] }
+      # render json: OrderSerializer.new(order, options).serializable_hash
+      render json: order, status: 201
     else 
-     head 404
+    #  head 404
+    render json: { errors: order.errors }, status: 422
     end
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:total, product_ids: [])
   end
 end
