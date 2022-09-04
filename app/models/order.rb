@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   include ActiveModel::Valodations
-  
+
   before_validation :set_total!
   belongs_to :user
   has_many :placements, dependent: :destroy
@@ -11,7 +11,10 @@ class Order < ApplicationRecord
   validates_with EnoughProductsValidator
 
   def set_total!
-    self.total = products.map(&:price).sum
+    # self.total = products.map(&:price).sum
+    self.total = self.placements
+            .map{ |placement| placement.product.price * placement.quantity}
+            .sum
   end
 
   # @param product_ids_and_quantities [Array<Hash>] something 
