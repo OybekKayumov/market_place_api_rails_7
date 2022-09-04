@@ -12,7 +12,7 @@ two:
   published: false
   user: two
 
-  another_tv: 
+another_tv:
   title: Cheap TV
   price: 99.99
   published: false
