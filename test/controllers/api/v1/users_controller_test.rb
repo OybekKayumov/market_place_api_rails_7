@@ -23,8 +23,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
       :attributes, :email)
     assert_equal @user.products.first.id.to_s, json_response. 
       dig(:data, :relationships, :products, :data, 0, :id)
-    assert_equal @user.products.first.title, json_response.dig 
-      (:included, 0, :attributes, :title)
+    assert_equal @user.products.first.title, json_response.dig(:included, 0, :attributes, :title)
   end
 
   test 'should create user' do
