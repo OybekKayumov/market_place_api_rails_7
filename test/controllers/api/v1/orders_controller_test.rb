@@ -55,7 +55,7 @@ class Api::V1::OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Order.count', 1) do 
     assert_difference('Placement.count', 2) do
       post api_v1_orders_url, params: @order_params, as: :json
-        headers: { Authorization: JsonWebToken.encode(user_id: @order.user_id) }, 
+        headers: { Authorization: JsonWebToken.encode(user_id: @order.user_id) },
       end
     end
     assert_response :created 
