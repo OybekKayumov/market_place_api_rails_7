@@ -11,3 +11,13 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActiveSupport::TestCase 
+  # ...
+  def assert_json_response_is_paginated json_response
+    assert_not_nil json_response.dig(:links, :first)
+    assert_not_nil json_response.dig(:links, :last)
+    assert_not_nil json_response.dig(:links, :next)
+    assert_not_nil json_response.dig(:links, :prev) 
+  end
+end

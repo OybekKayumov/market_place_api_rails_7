@@ -33,6 +33,8 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
       assert_not_nil json_response.dig(:links, :last)
       assert_not_nil json_response.dig(:links, :prev)
       assert_not_nil json_response.dig(:links, :next) 
+
+      assert_json_response_is_paginated json_response
   end
 
   test "should create product" do
