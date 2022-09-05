@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  include ActiveModel::Valodations
+  include ActiveModel::Validations
 
   before_validation :set_total!
   belongs_to :user
